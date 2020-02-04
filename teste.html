@@ -4,23 +4,22 @@
   </head>
   <body>
     <script>
-      var nome = "Cadu";
-      var idade = 27;
-      var peso = 76.5;
-      var humano = true;
+      var x = 10, y = 5;
+      console.log(x, y); // 10 5
 
-      var alunos = ['Cadu', 'João', 'José'];
+      var resultado = x + y;
+      console.log(resultado); // 15
 
-      var aluno = {
-        nome: 'Cadu',
-        idade: 27,
-        peso: 76.5,
-        humano: true
-      };
+      x = "10";
+      resultado = x + y;
+      console.log(resultado); // 105 (concatenou)
 
-      console.log(alunos); // mostrando array
-      console.log(alunos[1]); // mostrando item em posição do array
-      console.log(aluno.peso); // mostrando membro de objeto
+      //pode usar qualquer operador matemático -> + - * / %
+
+      x = 10;
+      //x = x + 3;
+      x += 3; // é o mesmo da linha acima
+      console.log(x); // 105 (concatenou)
     </script>
   </body>
 </html>
