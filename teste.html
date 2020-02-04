@@ -1,15 +1,47 @@
 <html>
   <head>
+    <meta charset="UTF-8">
     <title>Curso Javascript</title>
   </head>
   <body>
     <script>
-      function soma(num1, num2){
-        var result = num1 + num2;
-        return result;
+      function retornaSexo1(sexo){
+        // M, F
+        // Masculino, Feminino  
+
+        if(sexo === 'M'){ // == verifica se valores são iguais (mesmo com tipo diferente) | === verifica se os valores e tipos são iguais
+          return 'Masculino';
+        } else {
+          return 'Feminino';
+        }
       }
 
-      var result = soma(1, 2); // usando mesmo nome, pq usando var, a variavel criada dentro da funcao só existe lá.
+      function retornaSexo2(sexo){
+        if(sexo === 'M'){
+          return 'Masculino';
+        } else if(sexo === 'F'){
+          return 'Feminino'
+        } else{
+          return 'Outro';
+        }
+      }
+
+      function retornaSexo3(sexo){
+        switch(sexo){
+          case 'M':
+            return 'Masculino';
+          case 'F':
+            return 'Feminino';
+          default:
+            return 'Outro';
+        }
+      }
+
+      var resultado = retornaSexo1('M');
+      console.log(resultado);
+      resultado = retornaSexo2('asada');
+      console.log(resultado);
+      resultado = retornaSexo3('F'); 
       console.log(resultado);
     </script>
   </body>
