@@ -5,32 +5,10 @@
   </head>
   <body>
     <script>
-      // AND, OR, NOT
-      var sexo = 'M', idade = 27;
-      if(sexo === 'M' && idade >= 18)
-        console.log('OK');
+      var sexo = 'M';
 
-      idade = 10;
-      if(sexo === 'M' || idade >= 18) // continua atendendo
-        console.log('OK');
-
-      sexo = 'F';
-      if(sexo === 'M' || idade >= 18) // não vai retornar
-        console.log('OK');
-
-      if(sexo !== 'M') // NOT -> !== para três iguais | != para dois iguais
-        console.log('OK');
-
-      sexo = 'M';
-      var masculino;
-      if(sexo === 'M')
-        masculino = true;
-      else
-        masculino = false;
-
-      console.log(masculino);
-
-      masculino = sexo === 'M'; // faz o mesmo que bloco acima, porque a condição já retorna true ou false
+      var retorno = (sexo === 'M') ? 'Masculino' : 'Feminino';
+      console.log(retorno);
     </script>
   </body>
 </html>
