@@ -5,21 +5,16 @@
   </head>
   <body>
     <script>
-      // for, while
-
-      for (var i = 0; i <= 100; i++){
-        console.log(i);
+      function exibeAlgo() {
+        console.log('Hello World');
       }
 
-      var j = 0;
-      while(j <= 100){
-        console.log(j);
-        j++;
-      }
+      // setInterval serve para solicitar algo para executar a cada x tempo
+      setInterval(exibeAlgo, 1000); // assim não executa a função, apenas passa o escopo como referência, e vai executar a cada 1 segundo 
+      setInterval(exibeAlgo(), 1000); // assim executa a função apenas uma vez
 
-      // Se souber o tamanho do intervalo, melhor usar FOR
-      // Se não, usar while
-
+      // setTimeout solicita para executar depois de x tempo passado
+      setTimeout(exibeAlgo, 2000);
     </script>
   </body>
 </html>
