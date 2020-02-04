@@ -5,44 +5,32 @@
   </head>
   <body>
     <script>
-      function retornaSexo1(sexo){
-        // M, F
-        // Masculino, Feminino  
+      // AND, OR, NOT
+      var sexo = 'M', idade = 27;
+      if(sexo === 'M' && idade >= 18)
+        console.log('OK');
 
-        if(sexo === 'M'){ // == verifica se valores são iguais (mesmo com tipo diferente) | === verifica se os valores e tipos são iguais
-          return 'Masculino';
-        } else {
-          return 'Feminino';
-        }
-      }
+      idade = 10;
+      if(sexo === 'M' || idade >= 18) // continua atendendo
+        console.log('OK');
 
-      function retornaSexo2(sexo){
-        if(sexo === 'M'){
-          return 'Masculino';
-        } else if(sexo === 'F'){
-          return 'Feminino'
-        } else{
-          return 'Outro';
-        }
-      }
+      sexo = 'F';
+      if(sexo === 'M' || idade >= 18) // não vai retornar
+        console.log('OK');
 
-      function retornaSexo3(sexo){
-        switch(sexo){
-          case 'M':
-            return 'Masculino';
-          case 'F':
-            return 'Feminino';
-          default:
-            return 'Outro';
-        }
-      }
+      if(sexo !== 'M') // NOT -> !== para três iguais | != para dois iguais
+        console.log('OK');
 
-      var resultado = retornaSexo1('M');
-      console.log(resultado);
-      resultado = retornaSexo2('asada');
-      console.log(resultado);
-      resultado = retornaSexo3('F'); 
-      console.log(resultado);
+      sexo = 'M';
+      var masculino;
+      if(sexo === 'M')
+        masculino = true;
+      else
+        masculino = false;
+
+      console.log(masculino);
+
+      masculino = sexo === 'M'; // faz o mesmo que bloco acima, porque a condição já retorna true ou false
     </script>
   </body>
 </html>
