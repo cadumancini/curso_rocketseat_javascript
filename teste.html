@@ -4,22 +4,13 @@
   </head>
   <body>
     <script>
-      var x = 10, y = 5;
-      console.log(x, y); // 10 5
+      function soma(num1, num2){
+        var result = num1 + num2;
+        return result;
+      }
 
-      var resultado = x + y;
-      console.log(resultado); // 15
-
-      x = "10";
-      resultado = x + y;
-      console.log(resultado); // 105 (concatenou)
-
-      //pode usar qualquer operador matemático -> + - * / %
-
-      x = 10;
-      //x = x + 3;
-      x += 3; // é o mesmo da linha acima
-      console.log(x); // 105 (concatenou)
+      var result = soma(1, 2); // usando mesmo nome, pq usando var, a variavel criada dentro da funcao só existe lá.
+      console.log(resultado);
     </script>
   </body>
 </html>
