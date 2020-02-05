@@ -5,14 +5,27 @@
   </head>
   <body>
     <div id="app">
-      <button onclick="showAlert()">Press me</button>
-      <button onmouseover="showAlert()">Press me 2</button>
-      <input onkeypress="showAlert()"/>
+      <input type="text" name="nome" id="idNome" class="classNome"/>
+      <button class="botao">Adicionar</button>
     </div>
 
     <script>
-      function showAlert(){
-        alert('Button was clicked!');
+      var inputElement = document.getElementById('idNome'); // busca pelo id
+      var inputElements = document.getElementsByTagName('input'); // retorna um vetor de tags do tipo passado no parâmetro
+      var inputElementsClass = document.getElementsByClassName('classNome'); // retorna vetor de tags por nome da classe
+
+      inputElement = document.querySelector('body div#app input'); // percorre a DOM pelas tags passadas no parêmtro. O sinal de # indica o id
+      inputElement = document.querySelector('div#app input'); // também funciona sem passar o body, pq ele sempre vai ser o primeiro
+      inputElement = document.querySelector('input'); // busca o primeiro input que achar (essa função sempre traz somente UM elemento)
+      inputElement = document.querySelectorAll('input'); // traz todos os elementos que atenderem aos parâmetros
+      inputElement = document.querySelector('input[name=nome]'); // indicando atributos do elemento a ser buscado
+      console.log(inputElement);
+
+      inputElement = document.querySelector('input[name=nome]');
+      var btnElement = document.querySelector('button.botao'); // o '.' depois do tipo de elemento indica a class
+      btnElement.onclick = function() {
+        var text = inputElement.value;
+        alert('Botão foi clicado com o texto: ' + text);
       }
     </script>
   </body>
