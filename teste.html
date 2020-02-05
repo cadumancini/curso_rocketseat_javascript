@@ -4,17 +4,16 @@
     <title>Curso Javascript</title>
   </head>
   <body>
+    <div id="app">
+      <button onclick="showAlert()">Press me</button>
+      <button onmouseover="showAlert()">Press me 2</button>
+      <input onkeypress="showAlert()"/>
+    </div>
+
     <script>
-      function exibeAlgo() {
-        console.log('Hello World');
+      function showAlert(){
+        alert('Button was clicked!');
       }
-
-      // setInterval serve para solicitar algo para executar a cada x tempo
-      setInterval(exibeAlgo, 1000); // assim não executa a função, apenas passa o escopo como referência, e vai executar a cada 1 segundo 
-      setInterval(exibeAlgo(), 1000); // assim executa a função apenas uma vez
-
-      // setTimeout solicita para executar depois de x tempo passado
-      setTimeout(exibeAlgo, 2000);
     </script>
   </body>
 </html>
