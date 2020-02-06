@@ -5,28 +5,23 @@
   </head>
   <body>
     <div id="app">
-      <input type="text" name="nome" id="idNome" class="classNome"/>
-      <button class="botao">Adicionar</button>
+      <input id="nome">  
     </div>
 
     <script>
-      var inputElement = document.getElementById('idNome'); // busca pelo id
-      var inputElements = document.getElementsByTagName('input'); // retorna um vetor de tags do tipo passado no parâmetro
-      var inputElementsClass = document.getElementsByClassName('classNome'); // retorna vetor de tags por nome da classe
+      var linkElement = document.createElement('a'); // tag do elemento a ser criado
+      linkElement.setAttribute('href', 'http://rocketseat.com.br'); // alterando valor
+      linkElement.setAttribute('title', 'Site da Rocketseat');
+      var textElement = document.createTextNode('Acessar site da Rocketseat'); // criando string
+      linkElement.appendChild(textElement); // declarando texto como filho do link
+      // a linha acima seria o mesmo que criar:
+      // <a href="http://rocketseat.com.br">Acessar site da Rocketseat</a>
 
-      inputElement = document.querySelector('body div#app input'); // percorre a DOM pelas tags passadas no parêmtro. O sinal de # indica o id
-      inputElement = document.querySelector('div#app input'); // também funciona sem passar o body, pq ele sempre vai ser o primeiro
-      inputElement = document.querySelector('input'); // busca o primeiro input que achar (essa função sempre traz somente UM elemento)
-      inputElement = document.querySelectorAll('input'); // traz todos os elementos que atenderem aos parâmetros
-      inputElement = document.querySelector('input[name=nome]'); // indicando atributos do elemento a ser buscado
-      console.log(inputElement);
+      var containerElement = document.querySelector("#app");
+      containerElement.appendChild(linkElement);
 
-      inputElement = document.querySelector('input[name=nome]');
-      var btnElement = document.querySelector('button.botao'); // o '.' depois do tipo de elemento indica a class
-      btnElement.onclick = function() {
-        var text = inputElement.value;
-        alert('Botão foi clicado com o texto: ' + text);
-      }
+      var inputElement = document.querySelector('#nome');
+      containerElement.removeChild(inputElement); // containerElement está referenciando a div#app, e está removendo o filho input#nome
     </script>
   </body>
 </html>
