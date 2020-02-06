@@ -5,16 +5,23 @@
   </head>
   <body>
     <div id="app">
-      <div class="box"></div>  
+      <ul>
+        <li>
+          Fazer café
+          <a href="#">Excluir</a>
+        </li>
+        <li>
+          Estudar Javascript
+          <a href="#">Excluir</a>
+        </li>
+        <li>
+          Acessar comunidade da Rocketseat
+          <a href="#">Excluir</a>
+        </li>
+      </ul>
     </div>
-
-    <script>
-      var boxElement = document.querySelector('.box');  
-      //boxElement.style. -> o que for escrito depois do style vai ser a propriedade do css. 
-      // Quando for uma propriedade com dois nomes, separado por hífen, tirar o hífen e deixa a primeira letra da palavar como maiuscula
-      boxElement.style.width = 100;
-      boxElement.style.height = 100;
-      boxElement.style.backgroundColor = '#f00';
-    </script>
+    <input type="text" placeholder="Digite um TO-DO">
+    <button>Adicionar</button>
+    <script src="todos.js"></script>
   </body>
 </html>
