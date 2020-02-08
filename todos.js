@@ -2,11 +2,10 @@ var listElement = document.querySelector("#app ul"); // de dentro de #app, pega 
 var inputElement = document.querySelector("#app input");
 var buttonElement = document.querySelector("#app button");
 
-var todos = [
-  'Fazer café',
-  'Estudar Javascript',
-  'Acessar comunidade da Rocketseat'
-];
+var todos = JSON.parse(localStorage.getItem('list_todos')) || [];
+// se não tiver nada no array e não conseguir retornar um vetor,
+// utilizando o '|| []' funciona, pois vai retornar a primeira parte
+// ou a segunda, caso a primeira não funcionar
 
 function renderTodos(){
   listElement.innerHTML = ''; // propriedade que contem todo o HTML dentro do elemento
@@ -37,6 +36,7 @@ function addTodo() {
   todos.push(todoText);
   inputElement.value = '';
   renderTodos();
+  saveToStorage();
 }
 
 buttonElement.onclick = addTodo;
@@ -45,4 +45,11 @@ function deleteTodo(pos) {
   todos.splice(pos, 1); // remove, a partir da posicao do primeiro parâmetro, 
                         // os itens na quantidade passada no segundo parametro
   renderTodos();
+  saveToStorage();
+}
+
+function saveToStorage() {
+  //localStorage.setItem('list_todos', todos);
+  // Do jeito acima não é possível pois para armazenar chave-valor, o valor tem que ser string, e não array.
+  localStorage.setItem('list_todos', JSON.stringify(todos)); // transforma o vetor em JSON
 }
